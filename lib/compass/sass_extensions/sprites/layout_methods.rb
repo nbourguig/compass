@@ -112,8 +112,8 @@ module Compass
               image.left = 0
               next
             end
-            image.top = previous.top - image.height
-            image.left = previous.left + previous.width
+            image.top = previous.top - image.height - [image.spacing, previous.spacing].max
+            image.left = previous.left + previous.width + [image.spacing, previous.spacing].max
             previous = image
           end
         end
